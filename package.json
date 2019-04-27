@@ -1,0 +1,25 @@
+{
+  "name": "gniang.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gniang/gniang.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gniang/gniang.github.io/issues"
+  },
+  "homepage": "https://github.com/Gniang/gniang.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "webpack-cli": "^3.3.1"
+  }
+}
