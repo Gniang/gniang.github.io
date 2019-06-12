@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Streat View VR</title>
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <!-- 前 -->
+    <a-image width="100" height="100" position="0 0 -50" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=0"></a-image>
+    <!-- 右 -->
+    <a-image width="100" height="100" position="50 0 0" rotation="0 -90 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=90&fov=90&pitch=0"></a-image>
+    <!-- 後ろ -->
+    <a-image width="100" height="100" position="0 0 50" rotation="0 180 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=180&fov=90&pitch=0"></a-image>
+    <!-- 左 -->
+    <a-image width="100" height="100" position="-50 0 0" rotation="0 90 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=270&fov=90&pitch=0"></a-image>
+    <!-- 上 -->
+    <a-image width="100" height="100" position="0 50 0" rotation="90 0 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=90"></a-image>
+    <!-- 下 -->
+    <a-image width="100" height="100" position="0 -50 0" rotation="-90 0 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=-90"></a-image>
+  </a-scene>
+</body>
