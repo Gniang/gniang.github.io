@@ -2,26 +2,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Streat View VR</title>
-  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Streat View VR</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script>
+        window.onload = () => {
+            let key = "key=AIzaSyAcEIc1NOJRy6akC0jxAN4s--TazdpP48Y";
+            let mapUrl = "https://maps.googleapis.com/maps/api/streetview?";
+            let size = "size=512x512";
+            let location = "location=32.764678,-117.227644";
+            let fov = "fov=";
+            let heading = "heading=";
+            let pitch = "heading=";
+            let urls = {
+                fore: mapUrl + [key, size, location, heading + "0", fov + "90", pitch + "0"].join("&"),
+                right: mapUrl + [key, size, location, heading + "90", fov + "90", pitch + "0"].join("&"),
+                back: mapUrl + [key, size, location, heading + "180", fov + "90", pitch + "0"].join("&"),
+                left: mapUrl + [key, size, location, heading + "270", fov + "90", pitch + "0"].join("&"),
+                up: mapUrl + [key, size, location, heading + "0", fov + "90", pitch + "90"].join("&"),
+                down: mapUrl + [key, size, location, heading + "0", fov + "90", pitch + "-90"].join("&"),
+            };
+            document.getElementById("fore").src = urls.fore;
+            document.getElementById("right").src = urls.right;
+            document.getElementById("back").src = urls.back;
+            document.getElementById("left").src = urls.left;
+            document.getElementById("up").src = urls.up;
+            document.getElementById("down").src = urls.down;
+        }
+    </script>
 </head>
 
 <body>
-  <a-scene>
-    <!-- 前 -->
-    <a-image width="100" height="100" position="0 0 -50" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=0"></a-image>
-    <!-- 右 -->
-    <a-image width="100" height="100" position="50 0 0" rotation="0 -90 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=90&fov=90&pitch=0"></a-image>
-    <!-- 後ろ -->
-    <a-image width="100" height="100" position="0 0 50" rotation="0 180 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=180&fov=90&pitch=0"></a-image>
-    <!-- 左 -->
-    <a-image width="100" height="100" position="-50 0 0" rotation="0 90 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=270&fov=90&pitch=0"></a-image>
-    <!-- 上 -->
-    <a-image width="100" height="100" position="0 50 0" rotation="90 0 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=90"></a-image>
-    <!-- 下 -->
-    <a-image width="100" height="100" position="0 -50 0" rotation="-90 0 0" src="https://maps.googleapis.com/maps/api/streetview?size=600x600&location=32.764678,-117.227644&heading=0&fov=90&pitch=-90"></a-image>
-  </a-scene>
+    <a-scene>
+        <a-assets>
+            <img id="fore" src="">
+            <img id="right" src="">
+            <img id="back" src="">
+            <img id="left" src="">
+            <img id="up" src="">
+            <img id="down" src="">
+        </a-assets>
+        <!-- 前 -->
+        <a-image width="100" height="100" position="0 0 -50" src="#fore"></a-image>
+        <!-- 右 -->
+        <a-image width="100" height="100" position="50 0 0" rotation="0 -90 0" src="#right">
+        </a-image>
+        <!-- 後ろ -->
+        <a-image width="100" height="100" position="0 0 50" rotation="0 180 0" src="#back">
+        </a-image>
+        <!-- 左 -->
+        <a-image width="100" height="100" position="-50 0 0" rotation="0 90 0" src="#left">
+        </a-image>
+        <!-- 上 -->
+        <a-image width="100" height="100" position="0 50 0" rotation="90 0 0" src="#up">
+        </a-image>
+        <!-- 下 -->
+        <a-image width="100" height="100" position="0 -50 0" rotation="-90 0 0" src="#down">
+        </a-image>
+    </a-scene>
 </body>
