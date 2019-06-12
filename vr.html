@@ -15,7 +15,7 @@
             let location = "location=32.764678,-117.227644";
             let fov = "fov=";
             let heading = "heading=";
-            let pitch = "heading=";
+            let pitch = "pitch=";
             let urls = {
                 fore: mapUrl + [key, size, location, heading + "0", fov + "90", pitch + "0"].join("&"),
                 right: mapUrl + [key, size, location, heading + "90", fov + "90", pitch + "0"].join("&"),
@@ -37,12 +37,12 @@
 <body>
     <a-scene>
         <a-assets>
-            <img id="fore" src="">
-            <img id="right" src="">
-            <img id="back" src="">
-            <img id="left" src="">
-            <img id="up" src="">
-            <img id="down" src="">
+            <img id="fore" src="" crossorigin="anonymous">
+            <img id="right" src="" crossorigin="anonymous">
+            <img id="back" src="" crossorigin="anonymous">
+            <img id="left" src="" crossorigin="anonymous">
+            <img id="up" src="" crossorigin="anonymous">
+            <img id="down" src="" crossorigin="anonymous">
         </a-assets>
         <!-- 前 -->
         <a-image width="100" height="100" position="0 0 -50" src="#fore"></a-image>
