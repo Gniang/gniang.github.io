@@ -18,8 +18,8 @@
   "homepage": "https://github.com/Gniang/gniang.github.io#readme",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "vinyl-source-stream": "^2.0.0",
-    "webpack-cli": "^3.3.1"
+    "webpack-cli": "^3.3.11"
   }
 }
